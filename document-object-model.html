@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JavaScript</title>
+    <style>
+    #cobacoba {
+      background-color: yellow; /* Set background color to yellow */
+      color: red;               /* Set text color to red */
+      font-size: 15px;          /* Set font size to 15px */
+    }
+    </style>
+</head>
+<body>
+
+<!-- ========================================================================================================================================= -->
+    <h2>JavaScript HTML DOM Class ID</h2>
+        <p id="intro">Finding HTML Elements by Id</p> <!-- kalau intro nya tidak ada maka akan eror/null -->
+        <p>This example demonstrates the <b>getElementsById</b> method.</p>
+        <p id="demo"></p>
+    
+<!-- ========================================================================================================================================= -->
+    <h2>JavaScript HTML DOM Class Name</h2>
+        <p>Finding HTML Elements by Class Name.</p>
+        <!-- Paragraf ini menjelaskan tujuan dari contoh: mencari elemen HTML berdasarkan nama class -->
+        <p class="introClassName">Hello World!</p>
+        <!-- Paragraf pertama dengan class "intro" -->
+        <p class="introClassName">example <b>getElementsByClassName</b> method.</p>
+        <!-- Paragraf kedua dengan class "intro" -->
+        <p id="demoClassName"></p>
+        <!-- Elemen dengan id "demo" akan digunakan untuk menampilkan hasil menggunakan JavaScript -->
+    
+<!-- ========================================================================================================================================= -->
+    <h2>JavaScript HTML DOM TAG NAME</h2>
+        <p>Finding HTML Elements by Tag Name.</p>
+        <!-- Paragraf pertama -->
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        <!-- Paragraf kedua yang menjelaskan penggunaan method -->
+        <p id="demoTagName"></p>
+        <!-- Paragraf ketiga dengan id "demo" tempat hasil JavaScript akan ditampilkan -->
+            
+<!-- ======================================================================================================================================== -->
+    <h2>JavaScript HTML DOM QuerySelectorAll </h2>
+        <p>Finding HTML Elements by Query Selector</p>
+        <!-- Paragraf penjelasan umum -->
+        <p class="intro">Hello World!</p>
+        <!-- Paragraf pertama dengan class "intro" -->
+        <p class="intro">example <b>querySelectorAll</b> method.</p>
+        <!-- Paragraf kedua dengan class "intro" -->
+        <p id="demo"></p>
+        <!-- Paragraf kosong tempat menampilkan hasil melalui JavaScript -->
+    
+<!-- ========================================================================================================================================== -->
+    <h2>JavaScript HTML DOM Menambah dan Menghapus Element Pada Dokumen</h2>
+    <div id="div1">The text above has been created dynamically.</div>
+
+<!-- =========================================================================================================================================== -->
+    <h2>JavaScript HTML DOM Menambah dan Menghapus Element Pada Child</h2>
+        <ul id="myList">
+            <li>Coffee</li>
+            <li>Tea</li>
+        </ul>
+
+        <p>Click the button to append an item to the end of the list.</p>
+        <!-- Button to trigger the function when clicked -->
+        <button onclick="myFunction()">Try it</button>
+<!-- ========================================================================================================================================== -->
+    <h2>HOW TO CHANGE STYLE PROPERTY</h2>
+        <p id="myP">Click the button to give me a red background color.</p>
+
+        <!-- Button that will trigger the function when clicked -->
+        <button onclick="myFunction()">Try it</button>
+<!-- ========================================================================================================================================= -->
+    <h2>How To Get Style PROPERTY From Head</h2>
+        <!-- Button to trigger the function when clicked -->
+        <button onclick="myFunction1()">Try it</button>
+
+        <!-- Placeholder paragraph to display the CSS content -->
+        <p id="demo1"></p>
+<!-- ========================================================================================================================================== -->
+    <h2>JavaScript addEventListener()</h2>
+        <p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+
+        <button id="myBtn">Try it</button>
+    
+        <!-- contoh add many event to tha same elements  -->
+            <p>addEventListener1() method to add two click events to the same button.</p>
+            <button id="myBtn1">Coba di klik</button>
+
+<!-- =========================================================================================================================================== -->
+    <h2>JavaScript addEventListener() add Event Handler to window Object</h2>
+        <p>addEventListener() method on the window object.</p>
+        <p>Try resizing this browser window to trigger the "resize" event handler.</p>
+        <p id="demo3"></p>
+
+<!-- =========================================================================================================================================== -->
+    <h2>PASSING PARAMETER</h2>
+        <!-- Tombol yang akan diklik -->
+        <p>how to pass parameter values when using the addEventListener() method.</p>
+        <button id="myBtn5">Try it</button>
+
+        <!-- Tempat untuk menampilkan hasil -->
+        <p id="demo5"></p>
+
+
+<!-- ####################################################################################################################################################################################### -->
+<!-- ####################################################################################################################################################################################### -->
+<!-- ####################################################################################################################################################################################### -->
+
+
+<script> 
+        // DOM
+            let url1 = document
+            console.log(url1);
+
+            let url = document.URL
+            console.log(url);
+            
+    // ========================================================================================================================================
+        // GET ELEMENT BY ID (#)
+            const element = document.getElementById('intro');
+            console.log(element);
+            
+            document.getElementById('demo').innerHTML =
+            'The text from the intro paragraph is: ' + element.innerHTML;
+
+    // ========================================================================================================================================
+        // GET ELEMENTS BY CLASS
+            // Mengambil semua elemen dengan class "intro" dan menyimpannya ke dalam variabel 'element'
+            const elementClassName = document.getElementsByClassName('introClassName');
+            // Mengambil elemen dengan id "demo", dan mengatur isinya menjadi teks + isi dari elemen pertama (index 0) dalam koleksi class "intro"
+            
+            document.getElementById('demoClassName').innerHTML =
+            'The first paragraph (index 0) with class="intro" is: ' + elementClassName[0].innerHTML;
+            // elementClassName[0] akan menunjukan perhitungan array dimana dimuali dari angka 0
+            console.log(elementClassName);
+            
+    // ========================================================================================================================================
+        // GET ELEMENTS BY TAG NAME
+            // Mengambil semua elemen <p> dan menyimpannya dalam variabel 'element'
+            const elementTagName = document.getElementsByTagName('p');
+            
+            // Mengambil elemen dengan id "demo", lalu mengubah isinya menjadi hasil innerHTML dari <p> pertama (index 0)
+            document.getElementById('demoTagName').innerHTML =
+            'The text in first paragraph (index 0) is: ' + elementTagName[0].innerHTML;
+            console.log(elementTagName);
+
+    // ========================================================================================================================================
+        // GET ELEMENTS BY QUERY SELECTOR
+            // Menggunakan querySelectorAll untuk memilih semua elemen <p> yang memiliki class "intro"
+            const x = document.querySelectorAll('p.intro');
+
+            // Mengatur isi elemen dengan id "demo" menjadi innerHTML dari elemen pertama (index 0) yang ditemukan
+            document.getElementById('demo').innerHTML =
+            'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+        
+    // =========================================================================================================================================
+        // MENAMBAH DAN MENGHAPUS ELEMEN PADA DOKUMEN
+            document.body.onload = addElement;
+            function addElement() {
+                // create a new div element
+                const newDiv = document.createElement('div');
+                // and give it some content
+                const newContent = document.createTextNode('Hi there and greetings!');
+                // add the text node to the newly created div
+                newDiv.appendChild(newContent);
+                // add the newly created element and its content into the DOM
+                const currentDiv = document.getElementById('div1');
+                document.body.insertBefore(newDiv, currentDiv.nextSibling);
+                // Kalau tanpa nextSibling maka penambahannya akan di atas div1 agar menjadi child
+            }
+    
+    // ===========================================================================================================================================
+        // MENAMBAH DAN MENGHAPUS ELEMEN PADA CHILD
+        // Function that will be called when the button is clicked
+        function myFunction() {
+            // Create a new <li> element
+            let node = document.createElement('LI');
+
+            // Create a text node with the value 'Water'
+            let textnode = document.createTextNode('Water');
+
+            // Append the text node to the newly created <li> element
+            node.appendChild(textnode);
+
+            // Append the <li> to the existing <ul> with id 'myList'
+            document.getElementById('myList').appendChild(node);
+            // Kalau (node, current) maka penambahan water ada di atas coffee karena bukan child
+        }
+
+    // ============================================================================================================================================
+        // HOW TO CHANGE STYLE PROPERTY
+        // Function to change the background color of the paragraph
+        function myFunction() {
+            document.getElementById('myP').style.backgroundColor = 'red';
+            document.getElementById('myP').style.color = 'white';
+        }
+
+    // ============================================================================================================================================
+        // How To Get Style PROPERTY From Head
+        // Function that runs when button is clicked
+        function myFunction1() {
+            // Get the first <style> element in the document
+            var x = document.getElementsByTagName('style')[0];
+
+            // Display the content of the <style> tag in the paragraph with id="demo"
+            document.getElementById('demo1').innerHTML = x.innerHTML;
+        }
+
+    // ============================================================================================================================================
+        // JavaScript addEventListener() ada banyak contoh di w3school entang Js html DOM event
+        // Menambahkan event listener untuk menangani event 'click' pada tombol
+            document.getElementById('myBtn').addEventListener('click', myFunction);
+
+            // Fungsi yang akan dijalankan saat tombol diklik
+            function myFunction() {
+                alert('Hello World!');
+            }
+
+                // contoh add many event to tha same elements
+                // Ambil elemen tombol berdasarkan ID
+                var y = document.getElementById('myBtn1');
+
+                // Tambahkan event listener pertama untuk klik
+                y.addEventListener('click', myFunction);
+
+                // Tambahkan event listener kedua untuk klik
+                y.addEventListener('click', someOtherFunction);
+
+                // Fungsi pertama yang dijalankan saat tombol diklik
+                function myFunction() {
+                    alert('Hello World!');
+                }
+
+                // Fungsi kedua yang juga dijalankan saat tombol diklik
+                function someOtherFunction() {
+                    alert('This function was also executed!');
+                }
+
+    //=================================================================================================================================================
+        // JavaScript addEventListener() add Event Handler to window Object
+        // Menambahkan event listener ke objek window untuk event 'resize'
+                // Fungsi ini akan dipanggil setiap kali ukuran jendela diubah
+                window.addEventListener('resize', function () {
+                    // Mendapatkan elemen dengan id 'demo' dan mengubah isinya menjadi angka acak
+                    // Math.random() menghasilkan angka desimal acak antara 0 dan 1
+                    document.getElementById('demo3').innerHTML = Math.random();
+                }); 
+                // Cek Output ada pada console lalu klik tablet
+
+    // ================================================================================================================================================
+        // PASSING PARAMETER
+        // Mendefinisikan dua variabel sebagai parameter
+            let p1 = 5;
+            let p2 = 7;
+
+            // Menambahkan event listener ke tombol
+            // Di sini kita menggunakan fungsi anonimus (function() { ... }) agar bisa memanggil fungsi dengan parameter
+            document.getElementById('myBtn5').addEventListener('click', function () {
+                // Memanggil fungsi myFunction dan mengirim parameter p1 dan p2 saat tombol diklik
+                myFunction(p1, p2);
+            });
+
+            // Fungsi yang menerima dua parameter dan menampilkan hasil perkaliannya
+            function myFunction(a, b) {
+                // Menampilkan hasil ke dalam elemen dengan id "demo"
+                document.getElementById('demo5').innerHTML = a * b + 1;
+            }
+    // 
+</script>
+    </script>
+</body>
+</html>
