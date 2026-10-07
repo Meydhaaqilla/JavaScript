@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Array Iteration And Regex</h2>
+    <script>
+
+    // forEach()
+        // Mendeklarasikan array bernama 'number' yang berisi angka-angka
+        const number = [47, 27, 2, 89, 35];
+
+        // Menjalankan fungsi 'myFunction' untuk setiap elemen dalam array 'number'
+        number.forEach(myFunction);
+
+        // Fungsi yang akan dijalankan untuk setiap elemen dalam array
+        function myFunction(value, index, array) {
+            // 'value' adalah nilai elemen saat ini (contoh: 47, 27, dst)
+            // 'index' adalah posisi elemen dalam array (contoh: 0, 1, 2, ...)
+            // 'array' adalah referensi ke array asli (yaitu 'number')
+
+            // Mencetak nilai dari elemen saat ini ke konsol
+            console.log(value);
+        }
+// =================================================================================
+    // map()
+        // Mendeklarasikan array 'numbers1' berisi angka-angka
+        const numbers1 = [63, 9, 26, 15, 16, 9];
+
+        // Menggunakan metode .map() untuk membuat array baru 'numbers2'
+        // Setiap elemen di 'numbers1' akan dikalikan 2 oleh fungsi 'myFunction1'
+        const numbers2 = numbers1.map(myFunction1);
+
+        // Fungsi yang menerima value, index, dan array sebagai parameter
+        // Di sini hanya 'value' yang digunakan
+        function myFunction1(value, index, array) {
+            return value * 2; // Mengembalikan hasil perkalian 2 dari nilai elemen
+        }
+
+        // Menampilkan hasil array baru (numbers2) ke konsol
+        console.log(numbers2);
+// =================================================================================
+    // filter() -> menbuat larik baru dgn elemen larik yang lolos pengujian
+        // Mendeklarasikan array 'numbers3' yang berisi sejumlah angka
+        const numbers3 = [86, 48, 37, 8, 91, 14];
+
+        // Menggunakan metode .filter() untuk membuat array baru 'over18'
+        // Hanya elemen yang lebih besar dari 18 yang akan disertakan
+        const over18 = numbers3.filter(myFunction2);
+
+        // Fungsi filter yang dijalankan untuk setiap elemen array
+        // Mengembalikan true jika nilai lebih dari 18 (akan masuk ke array baru)
+        function myFunction2(value, index, array) {
+            return value > 18;
+        }
+
+        // Menampilkan hasil array 'over18' ke konsol
+        console.log(over18);
+
+// ==================================================================================
+    // every() -> memeriksa apakah semua nilai array lulus tes
+    // some() -> memeriksa apakah beberapa nilai larik lulus ujuan
+        // Mendeklarasikan array 'numbers4' berisi angka-angka
+        const numbers4 = [3, 28, 98, 6, 5, 17, 22];
+
+        // Mengecek apakah semua elemen lebih dari 18
+        let allOver18 = numbers4.every(myFunction3);
+
+        // Mengecek apakah setidaknya satu elemen lebih dari 18
+        let someOver18 = numbers4.some(myFunction3);
+
+        // Mengecek apakah semua elemen kurang dari 18
+        let allUnder18 = numbers4.every(myFunction4);
+
+        // Mengecek apakah setidaknya satu elemen kurang dari 18
+        let someUnder18 = numbers4.some(myFunction4);
+
+        // Fungsi untuk memeriksa apakah elemen lebih dari 18
+        function myFunction3(value) {
+            return value > 18;
+        }
+
+        // Fungsi untuk memeriksa apakah elemen kurang dari 18
+        function myFunction4(value) {
+            return value < 18;
+        }
+
+        // Menampilkan hasil ke konsol
+        console.log("All Over 18:", allOver18);     // false
+        console.log("Some Over 18:", someOver18);   // true
+        console.log("All Under 18:", allUnder18);   // false
+        console.log("Some Under 18:", someUnder18); // true
+
+// =========================================================================================================
+    // indexOf() -> mencari array untuk nilai elemen dan mengembalikan pada posisi berapa
+    //  array.indexOf() -> menggembalikan -1 jika item tidak ditemukan
+        // Membuat array bernama 'fruit' yang berisi beberapa nama buah
+        const fruit = ["Apple", "Lemon", "Grape", "Mango"];
+
+        // Menggunakan indexOf untuk mencari posisi (index) dari elemen "Mango"
+        // Jika ditemukan, indexOf akan mengembalikan index-nya (dalam hal ini: 3)
+        let position = fruit.indexOf("Mango");
+
+        // Mencari posisi dari elemen "Mangoo" (dengan 2 huruf 'o')
+        // Karena elemen ini tidak ada dalam array, indexOf akan mengembalikan -1
+        let position2 = fruit.indexOf("Mangoo");
+
+        // Menampilkan hasil pencarian posisi "Mango" → hasilnya 3
+        console.log(position);
+
+        // Menampilkan hasil pencarian posisi "Mangoo" → hasilnya -1 (tidak ditemukan)
+        console.log(position2);
+// =============================================================================================================
+    // find() -> mengembalikan nilai elemen larik pertama yang melewati fungsi pengujian
+        // Membuat array angka yang berisi beberapa nilai numerik
+        const angka = [2, 9, 11, 14, 32, 12, 5, 56];
+
+        // Menggunakan metode .find() untuk mencari elemen pertama yang memenuhi kondisi di fungsi 'myapaaja'
+        let first = angka.find(myapaaja);
+
+        // Fungsi callback 'myapaaja' digunakan oleh .find()
+        // Akan mengembalikan nilai pertama dalam array yang lebih besar dari 18
+        function myapaaja(value, index, array) {
+            return value > 18;
+        }
+
+        // Menampilkan hasil elemen pertama yang lebih dari 18
+        console.log(first);
+
+
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    // Regex (Regular expression)
+        // Search String() with Regex
+            // Variabel 'text' berisi kalimat
+            let text = "Di Dunia Terdapat Berbagai Flora dan Fauna";
+
+            // Mencari kata 'flora' (huruf kecil), akan gagal karena 'Flora' dalam teks berawalan huruf kapital
+            let n = text.search('flora');
+            console.log(n); // Output: -1
+
+            // Menggunakan regex dengan flag 'i' agar pencarian tidak membedakan huruf besar-kecil
+            let m = text.search(/flora/i); 
+            // Penjelasan modifier:
+            // i → (insensitive) tidak membedakan huruf kapital dan huruf kecil, jadi 'Flora' bisa cocok dengan 'flora'
+            // g → (global) mencari SEMUA kecocokan (tidak dipakai di .search(), tapi bisa digunakan di match())
+            // m → (multiline) memungkinkan pencarian melibatkan baris-baris berbeda (\n), berguna saat teks lebih dari satu baris
+            
+            console.log(m); // Output: 28 → karena 'Flora' ditemukan di index ke-28
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    // Regex Pattern
+        // Contoh 1: [abc]
+            // ===========================
+            let teks1 = "belajar coding cepat";
+            let hasil1 = teks1.match(/[abc]/g); 
+            // [abc] artinya: cari karakter 'a' atau 'b' atau 'c'
+            // g (global) artinya: cari SEMUA kecocokan dalam string
+            console.log(hasil1); // Output: ['b', 'a', 'c']
+        // Contoh 2: [0-9]
+            // ===========================
+            let teks2 = "Nomor saya 12345";
+            let hasil2 = teks2.match(/[0-9]/g); 
+            // [0-9] artinya: cocokkan semua angka dari 0 sampai 9
+            // g: cari semua angka yang ada dalam teks
+            console.log(hasil2); // Output: ['1', '2', '3', '4', '5']
+        // Contoh 3: (x|y)
+            // ===========================
+            let teks3 = "Saya minum teh dan kamu minum kopi";
+            let hasil3 = teks3.match(/teh|kopi/g); 
+            // (teh|kopi) artinya: cocokkan kata 'teh' ATAU 'kopi'
+            // | adalah operator ATAU (alternatif antar pola)
+            // g: cari semua yang cocok
+            console.log(hasil3); // Output: ['teh', 'kopi']
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    // Mengunakan regex.test() -> mencari string pada sebuah pola dan mengembalikan true/ false
+        const pattern = /e/; 
+        // Regex pattern: mencari karakter 'e' kecil
+        // bisa menggunakan /[a-z]/ atau /[A-Z] huruf kapitas 
+
+        let test = "ini merupakan contoh test"; 
+        // Simpan string yang akan diuji ke dalam variabel bernama 'test'
+
+        console.log(pattern.test(test)); 
+        // .test() menguji apakah pattern cocok di dalam string 'test'
+        // Output: true (karena ada huruf 'e' di dalam teks)
+
+
+        const patternn = /(?=.*[0-9])([a-zA-Z0-9!@#$]){6,20}/g;
+        let test1 = 'Password'
+        console.log(patternn.test(test1));
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    // Regex Metacharacter
+        let z = '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%';
+        console.log(z);
+            
+        let text3 = "Hello world! 123_ABC abc...";
+
+        // 1. . (titik) - satu karakter apa saja
+        console.log(text3.match(/w.r/)); // mencocokkan 'wor'
+
+        // 2. ^ (awal string)
+        console.log(/^Hello/.test(text3)); // true karena dimulai dengan "Hello"
+
+        // 3. $ (akhir string)
+        console.log(/abc\.\.\.$/.test(text3)); // true karena diakhiri "abc..."
+
+        // 4. * (0 atau lebih karakter sebelumnya)
+        console.log(text3.match(/lo*/g)); // cocok dengan 'lo' dan 'l' jika ada
+
+        // 5. + (1 atau lebih karakter sebelumnya)
+        console.log(text3.match(/o+/g)); // cocok dengan 'o', 'oo', dll
+
+        // 6. ? (0 atau 1 karakter sebelumnya)
+        console.log(text3.match(/e?l/g)); // cocok dengan 'el' dan 'l'
+
+        // 7. [] (karakter set)
+        console.log(text3.match(/[aeiou]/g)); // semua huruf vokal
+
+        // 8. [^] (negasi set)
+        console.log(text3.match(/[^a-zA-Z ]/g)); // karakter non-huruf dan bukan spasi
+
+        // 9. {n} (tepat n kali)
+        console.log("aaabbb".match(/a{3}/)); // cocok dengan 'aaa'
+
+        // 10. {n,} (minimal n kali)
+        console.log("aaaa".match(/a{2,}/)); // cocok dengan 'aaaa'
+
+        // 11. {n,m} (antara n dan m kali)
+        console.log("aaaa".match(/a{2,3}/)); // cocok dengan 'aaa'
+
+        // 12. () (grouping)
+        console.log("abcabcabc".match(/(abc){2}/)); // cocok dengan 'abcabc'
+
+        // 13. | (alternatif)
+        console.log("I have a cat and a dog".match(/cat|dog/g)); // cocok dengan ['cat', 'dog']
+
+        // 14. \ (escape karakter)
+        console.log("a.b".match(/a\.b/)); // cocok dengan 'a.b' secara literal
+
+        // 15. \d (digit)
+        console.log(text3.match(/\d/g)); // angka: ['1','2','3']
+
+        // 16. \D (bukan digit)
+        console.log(text3.match(/\D/g)); // semua kecuali angka
+
+        // 17. \w (word character: huruf/angka/_)
+        console.log(text3.match(/\w/g)); // semua huruf, angka, dan underscore
+
+        // 18. \W (non-word character)
+        console.log(text3.match(/\W/g)); // spasi, tanda baca, dll
+
+        // 19. \s (spasi)
+        console.log(text3.match(/\s/g)); // spasi: [' ', ' ']
+
+        // 20. \S (non-spasi)
+        console.log(text3.match(/\S/g)); // semua kecuali spasi
+
+                
+        
+    </script>
+</body>
+</html>
