@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <script>
+        // COMPRASON OPERATOR
+        console.log(2 > 7);
+        console.log(8 < 4);
+        console.log(3 != 6);
+        console.log(4 == 4);
+        console.log(3 == 7); 
+        console.log(0 == false); // operator == tidak dapat membedakan antara false atau 0 sehingga dapat menggunakan ===
+        console.log(0 === false);
+        
+        let a = 20
+        console.log(a == 20); 
+        console.log(a == '20'); // harusnya false karena 20 adalah number bukan string (string berupa text menggunkan '')
+        console.log(a === '20');
+        
+        // LOGICAL OPERATOR
+            // Operator OR
+            console.log(true || false);
+            console.log(true || true);
+            console.log(false || true);
+            console.log(false || false);
+            
+            let x = 10
+            let y = 5
+            console.log(x > 5 || y > 10);
+            
+            let umur = 16;//  variabel bernama umur dan memberinya nilai 16
+            let punyaKartuPelajar = false;// variabel punyaKartuPelajar dan memberinya nilai false (tidak punya kartu pelajar).
+            if (umur < 18 || punyaKartuPelajar) {// Jika umur kurang dari 18 ATAU punya kartu pelajar, maka
+                alert("Dapat diskon pelajar.");
+            } else {
+                alert("Tidak dapat diskon.");
+            }
+
+            // OPERATOR &&
+            console.log(true && false);
+            console.log(true && true);
+            console.log(false && true);
+            console.log(false && false);
+
+            let hour = 12
+            let minuts = 30
+            if (hour == 12 && minuts == 30){
+                console.log('The time is 12:30');
+            }
+            let b = 1
+            if ( 1 && 0){
+                console.log('Ini contoh false, jadi ngga akan keluar');
+            }
+            let c = 5
+            if ( 5 && 5){
+                console.log('Ini contoh true, jadi akan keluar');
+            }
+
+            // OPERATOR NOT
+            let n = true
+            console.log(!n);
+            // Pengecekan Null (??)
+            let e
+            let f = 'test'
+            console.log(e ?? f); // value let e tidak terisi maka langsung output f
+            let g = 123
+            console.log(g ?? f);
+            
+    </script>
+</body>
+</html>
