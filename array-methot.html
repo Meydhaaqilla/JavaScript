@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Array Iteration And Regex</h2>
+
+
+    <script>
+    // Merubah Array ke String | toString()
+        // mengkonversi array menjadi string nilang array (dipisahkan koma)
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.toString());
+// ===================================================================================================================
+    //Merubah Array ke String | join()
+        const fruits1 = ["Papaya", "Grape", "Strawberry", "Watermelon"];
+        console.log(fruits1.join(" * "));
+        // tidak hanya *, tpi -/ + dan lainnya
+// ===================================================================================================================
+    // Array pop() -> menghapus elemen terakhir dari array
+        const fruits2 = ["Pear", "Kiwi", "Lemon", "Pomegranate"];
+        // Menghapus elemen terakhir dari array 'fruits' dan menyimpannya ke variabel 'fruit'
+        let fruit = fruits2.pop();
+        // Menampilkan array 'fruits' setelah elemen terakhir dihapus
+        console.log(fruits2); // ["Pear", "Kiwi", "Lemon"]
+        // Menampilkan nilai buah yang dihapus (yaitu elemen terakhir sebelumnya)
+        console.log(fruit);  // "Pomegranate"
+// ===================================================================================================================
+    // Array push() -> menambahkan array baru ke array (diakhir)
+        const fruits3 = ["Lime", "Cherry", "Starfruit"];
+
+        // Menambahkan elemen baru "Pineapple" ke akhir array fruits
+        // Metode .push() akan menambahkan elemen dan mengembalikan panjang array yang baru
+        let fruit1 = fruits3.push("Pineapple");
+
+        console.log(fruits3); // ["Lime", "Cherry", "Starfruit", "Pineapple"]
+        console.log(fruit1);  // 4 (jumlah total elemen setelah penambahan)
+// ===================================================================================================================
+    //Shifting Element shift()
+        // Membuat array fruits dengan tiga elemen: "Banana", "Orange", dan "Apple"
+        const fruits4 = ["Banana", "Orange", "Apple"];
+
+        // Menghapus elemen pertama dari array dan menyimpannya ke variabel fruit
+        // Dalam hal ini, "Banana" akan dihapus dari array dan disimpan dalam fruit
+        let fruit2 = fruits4.shift();
+
+        // Menampilkan isi array setelah elemen pertama dihapus
+        // Hasil: ["Orange", "Apple"]
+        console.log(fruits4);
+
+        // Menampilkan elemen yang dihapus dari array
+        // Hasil: Banana
+        console.log(fruit2);
+// ===================================================================================================================
+    //Shifting Element Unshift()
+        // Membuat array fruits dengan tiga elemen: "Banana", "Orange", dan "Apple"
+        const fruits5 = ["Banana", "Orange", "Apple"];
+
+        // Menambahkan elemen "Lemon" ke awal array fruits menggunakan unshift()
+        // Metode unshift() mengembalikan panjang array setelah penambahan elemen
+        let fruit3 = fruits5.unshift("Lemon");
+
+        // Menampilkan isi array setelah "Lemon" ditambahkan di depan
+        // Hasil: ["Lemon", "Banana", "Orange", "Apple"]
+        console.log(fruits5);
+
+        // Menampilkan nilai yang dikembalikan oleh unshift(), yaitu panjang array baru
+        // Hasil: 4
+        console.log(fruit3);
+// ===================================================================================================================
+    //Element Change
+        // Membuat array fruits dengan tiga elemen: "Mango", "Pineapple", dan "Grape"
+        const fruits6 = ["Mango", "Pineapple", "Grape"];
+
+        // Mengganti elemen pertama (indeks 0) dengan nilai "Papaya"
+        // Sebelumnya: "Mango", menjadi: "Papaya"
+        fruits6[0] = "Papaya";
+
+        // Menampilkan isi array setelah perubahan elemen pertama
+        // Hasil: ["Papaya", "Pineapple", "Grape"]
+        console.log(fruits6);
+
+        // Menambahkan elemen baru "Dragonfruit" ke akhir array
+        // fruits.length bernilai 3, jadi elemen ke-3 (indeks ke-3) akan diisi dengan "Dragonfruit"
+        fruits6[fruits6.length] = "Dragonfruit";
+
+        // Menampilkan isi array setelah penambahan "Dragonfruit"
+        // Hasil: ["Papaya", "Pineapple", "Grape", "Dragonfruit"]
+        console.log(fruits6);
+// ===================================================================================================================
+    // Concat() -> membuat array baru dengan menggabungkan array yang ada
+        // Membuat array myGirls dengan dua elemen: "Cecilie" dan "Lone"
+        const myGirls = ["Cecilie", "Lone"];
+
+        // Membuat array myBoys dengan tiga elemen: "Emil", "Tobias", dan "Linus"
+        const myBoys = ["Emil", "Tobias", "Linus"];
+
+        // Menggabungkan array myGirls dan myBoys menjadi satu array baru: myChildren
+        // Metode concat() tidak mengubah array asli, tapi mengembalikan array baru
+        const myChildren = myGirls.concat(myBoys);
+
+        // Menampilkan isi array myChildren
+        // Hasil: ["Cecilie", "Lone", "Emil", "Tobias", "Linus"]
+        console.log(myChildren);
+// ===================================================================================================================
+    // Element Delete (delete ini meninggalkan lubang/empty jadi tidak di rekomendasikan)
+        // Membuat array fruits dengan tiga elemen: "Banana", "Orange", dan "Apple"
+        const fruits7 = ["Banana", "Orange", "Apple"];
+
+        // Menghapus elemen pertama (indeks 0) menggunakan keyword delete
+        // Ini akan menghapus nilainya, tapi TIDAK mengubah panjang array
+        // Hasilnya, indeks 0 akan menjadi <empty> atau undefined
+        delete fruits7[0];
+
+        // Menampilkan isi array setelah penghapusan
+        // Hasil: [ <empty>, "Orange", "Apple" ]
+        console.log(fruits7);
+// ===================================================================================================================
+    // Splicing Array
+        // Membuat array animals dengan empat elemen: "Cat", "Dog", "Elephant", dan "Tiger"
+        const animals = ["Cat", "Dog", "Elephant", "Tiger"];
+        // Menyisipkan dua elemen baru ("Rabbit" dan "Fox") ke indeks ke-2
+        // Parameter splice(2, 0, ...) artinya: mulai dari indeks ke-2, hapus 0 elemen, lalu tambahkan dua elemen
+        animals.splice(2, 0, "Rabbit", "Fox");
+        // Menampilkan isi array setelah penyisipan
+        // Hasil: ["Cat", "Dog", "Rabbit", "Fox", "Elephant", "Tiger"]
+        console.log(animals);
+
+        // Membuat array planets dengan empat elemen: "Mercury", "Venus", "Earth", dan "Mars"
+        const planets = ["Mercury", "Venus", "Earth", "Mars"];
+        // Menghapus satu elemen mulai dari indeks ke-0 (yaitu "Mercury")
+        // Parameter splice(0, 1) artinya: mulai dari indeks 0, hapus 1 elemen
+        planets.splice(0, 1);
+        // Menampilkan isi array setelah penghapusan
+        // Hasil: ["Venus", "Earth", "Mars"]
+        console.log(planets);
+
+        // Membuat array planets berisi lima planet luar: "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"
+        const planetss = ["Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
+        // Mengambil elemen dari indeks 1 sampai sebelum indeks 3 (yaitu "Saturn" dan "Uranus")
+        // slice(1, 3) akan mengambil elemen dari indeks 1 dan 2, tapi tidak termasuk indeks 3
+        const gasGiants = planetss.slice(1, 3);
+        // Menampilkan array hasil slice
+        // Hasil: ["Saturn", "Uranus"]
+        console.log(gasGiants);
+// ===================================================================================================================
+    // Sort() -> mengurutkan array menurut abjad A-Z
+        const country = ["Indonesia", "Jepang", "Brazil", "Kanada", "Mesir", "India"];
+        console.log(country.sort());
+// ===================================================================================================================
+    // Reverse() -> membalik array dari belakang ke depan
+        const cities = ["Jakarta", "Tokyo", "Rio de Janeiro", "Toronto", "Kairo", "Mumbai"];
+        console.log(cities.reverse());
+            
+    // contoh jika tedapat sort maka Z-A
+        const cities2 = ["Jakarta", "Tokyo", "Rio de Janeiro", "Toronto", "Kairo", "Mumbai"];
+        console.log(cities2.sort().reverse());
+        // Atau
+        const cities3 = ["Jakarta", "Tokyo", "Rio de Janeiro", "Toronto", "Kairo", "Mumbai"];
+        cities3.sort()
+        cities3.reverse()
+        console.log(cities3);
+    // TERKADANG JIKA YANG DI URUTKAN NUMBER AKAN TERJADI KETIDAKSESUAIAN
+    // MISAL 25 DAN 100, AKAN MENDAHULUKAN 25 KARENA YANG DILIHAT PADA ANGKA AWALNYA
+    // YAITU 2 DAN 1
+// ===================================================================================================================
+    // Sortir Numerik
+        const points = ["47", 87, 27, "8", "15"];
+        points.sort(function (a, b) {return a - b})
+        console.log(points);
+        // walaupun berupa number atau string maka akan tetap sesuai
+        const angka = ['1', 68, '8', 57, 14]
+        angka.sort(function(a, b){return b - a})
+        console.log(angka);
+    
+    // Sortir Array dalah Object
+        const cars = [
+            {type: "volvo", year: 2016},
+            {type: "Saab", year: 2001},
+            {type: "BMW", year: 2010},
+        ]        
+        cars.sort(function (a, b) {
+            return a.year - b.year
+        })
+        console.log(cars);
+        
+        
+
+
+    </script>
+</body>
+</html>
