@@ -1,2 +1,2 @@
-# frontend
-code HTML/CSS/JS
+# JavaScript
+code JS
