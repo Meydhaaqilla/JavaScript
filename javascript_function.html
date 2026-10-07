@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <script>
+        // PEMANGGILAN FUNCTION
+        function greet() {
+            console.log('Hello, World');
+        }
+            // pemanggilan fungsi, greet tidak boleh di dalam kurung kurawal
+            greet()
+        
+        function greet1() {
+            console.log('My name Meydiasya');
+        }
+        function welcome() {
+            console.log('Welcome to my Galery');
+        }
+        function callGreeting(params) {
+            greet1();
+            welcome();
+        }
+        callGreeting();
+
+        // fungsi dengan parameter untuk menampilkan teks
+        function showMessage(from, text) {
+        // parameters: from (pengirim), text (isi pesan)
+        console.log(from + ': ' + text); // from dari text menyampaikan pesan
+        // Menampilkan pesan ke konsol dalam format: "pengirim: isi pesan"
+        }
+        // Memanggil fungsi dengan 2 argumen: 'Andi' sebagai pengirim dan 'Halo!' sebagai pesan
+        showMessage('Andi', 'Halo!'); // result: 'Andi: Halo!'
+        // Memanggil fungsi lagi dengan argumen berbeda
+        showMessage('Budi', 'Apa kabar?'); // result: 'Budi: Apa kabar?'
+        showMessage('umur') 
+        // umur tidak mengirimkan pesan, maka undefined
+
+        function chat(from, text = 'apa kabar?') {
+            console.log(from + ': ' + text);
+        }
+        chat('Mey')
+
+        // Return Value
+            function sum(a, b) {
+            return a + b;
+            // Mengembalikan hasil penjumlahan antara a dan b
+            }
+            let result = sum(1, 2);
+            // Memanggil fungsi sum dengan argumen 1 dan 2, hasilnya disimpan ke variabel result
+            console.log(result); // result: 3
+            // Menampilkan nilai dari result ke konsol
+
+            function checkAge(age) {
+            if (age >= 18) {
+                return true;  // Jika umur 18 atau lebih, kembalikan nilai true
+            } else {
+                return false; // Jika kurang dari 18, kembalikan nilai false
+            }
+            }
+            let age = 20;
+            if (checkAge(age)) {
+            console.log('Access granted'); // Jika hasil checkAge true → tampilkan 'Access granted'
+            } else {
+            console.log('Access denied');  // Jika hasil checkAge false → tampilkan 'Access denied'
+            }
+            // menggunakan fungsi checkAge di contoh sebelumnya
+            function showJob(age) {
+            if (!checkAge(age)) {
+                return; // jika umur tidak memenuhi syarat (kurang dari 18), keluar dari fungsi
+            }
+            console.log('Showing you the job list'); 
+            // jika umur memenuhi syarat (18 atau lebih), tampilkan daftar pekerjaan
+            }
+            // Pemanggil fungsi showJob
+            showJob(age);
+
+
+    </script>
+</body>
+</html>

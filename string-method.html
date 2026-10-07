@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript String Method</h2>
+    
+    <script>
+    // STRING
+        let a = "Kita Mau Coba \"pakai ini\""
+        console.log(a);
+// ==============================================================================
+    // STRING LENGTH
+        let b = "Ada Apa Dengan Cinta"
+        console.log(b.length);
+// ==============================================================================
+    // STRING EXTRACTION SLICE()
+        let str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7, 13));
+        console.log(str.slice(-4, -1));
+        console.log(str.slice(7));
+        // belakang seteleh 7 langsung mengikuti
+// ==============================================================================
+    // STRING EXTRACTION SUBSTRING()
+        console.log(str.substring(6, -10));
+        // substring -10 akan memulai dari awal/0
+// ==============================================================================
+    // STRING EXTRACTION SUBSTR()
+        console.log(str.substr(9, 4));
+        // 9 unutk juruf ke-, dan 4 untuk berapa huruf yang di ambil
+        console.log(str.substr(8));
+        // ini sama dengan substring (yang belakang mengikuti)
+// ==============================================================================
+    // STRING REPLACE()
+        let c = "Ada Apa Dengan Cinta"
+        let newC = c.replace('Cinta', 'Hati') 
+        // huruf besar kecil harus sesuai
+        console.log(newC);
+        
+        let d = "Cerita Cinta di SMA"
+        let newD = d.replace(/sma/i, 'SMP') 
+        // huruf i membuat case menjadi tidak sensitif
+        console.log(newD);
+        
+        let e = "Hati Hati Menjaga Hati"
+        let newE = e.replace(/hati/gi, 'Pelan') 
+        // huruf g membuat semua "Hati" berubah menjadi "Pelan"
+        // dan penambahan i agar case tidak sensitif
+        console.log(newE);
+// ==============================================================================
+    // STRING TOUPPERCASE() & TOLOWERCASE
+        let f = "Menjadi Hurif Besar Semua"
+        console.log(f.toUpperCase());
+        
+        let g = "Menjadi Hurif KECIL SEMUA"
+        console.log(f.toLowerCase());
+// ==============================================================================
+    // STRING CONCAT()
+        console.log(f.concat(" ",g));
+        // kalau tidak di beri " " maka tidak ada spasi
+        console.log(f + " " + g);
+        // ini juga bisa namun versi lama
+// ==============================================================================
+    // STRING TRIM() 
+        let h = "          mau coba string trim"
+        console.log(h.trim());
+        // Hanya bisa menyatukan spasi di awal dan di akhir
+        
+        let i = "mau coba string         trim";
+        let cleaned = i.trim().replace(/\s+/g, " ");
+        console.log(cleaned);
+// =============================================================================
+    // STRING INDEXOF()
+        let j = 'mau coba yang ini'
+        console.log(j.indexOf('coba'));
+        // hasil nya 4, di hitung dari awalan string
+// =============================================================================
+    // STRING LASTINDEXOF()
+        let k ='coba aja aja buat test'
+        console.log(k.lastIndexOf('aja'));
+        // 'aja' pertama di indeks 5, 'aja' terakhir di indeks 9
+// =============================================================================
+    // STRING SEARCH() (mengikuti let j string index of)
+        console.log(j.search('coba'));
+        // search() juga mencari posisi pertama kali munculnya 'coba'
+// =============================================================================
+    // STRING INCLUDES() (mengikuti let j string index of)
+        console.log(j.includes('coba'));
+        // terdapat string 'coba' jadi true
+        // tpi misal kata ingin outputnya false karen tidak ada kata ingin
+// =============================================================================
+    //STRING STARTSWITH() (mengikuti let j string index of)
+        console.log(j.startsWith('coba'));
+        // result nya false karena starsWith untuk string awal 'mau'
+
+
+    </script>
+</body>
+</html>

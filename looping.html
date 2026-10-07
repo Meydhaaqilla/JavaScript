@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <script>
+        // For Loop
+            // kode dimulai
+            let i = 0;
+            // kondisi benar (0 < 3) → jalankan body dan updateExpression
+            if (i < 3) {
+                console.log(i);
+                i++;
+            }
+            // kondisi benar (1 < 3) → jalankan body dan updateExpression
+            if (i < 3) {
+                console.log(i);
+                i++;
+            }
+            // kondisi benar (2 < 3) → jalankan body dan updateExpression
+            if (i < 3) {
+                console.log(i);
+                i++;
+            }
+            // berakhir, karena nilai i sekarang i == 3 dan 3 < 3 adalah salah
+
+            const n = 5;
+            // looping dari i = 1 ke 5
+            for (let i = 1; i <= n; i++) {
+                console.log(`total yang muncul ${i}`); // diberi dollar agar ke 5 nya muncul semua
+            }
+
+
+        // While Loop
+            let m = 0;
+            while (m < 3) {
+                console.log(m);
+                m++;
+            }
+            // let p = 0;
+            // while (p < 3) {
+            //     console.log(p);
+            // }
+            // jika ini dijalankan maka akan terus berhitung selamaanya dan membuat lemot program
+
+            let o = 3;
+            // selama nilai o bernilai truthy (bukan 0), jalankan blok while
+            while (o) {
+                console.log(o); // tampilkan nilai i
+                o--;            // kurangi i satu per satu
+            }
+
+        // Do...While Loop
+            let r = 0;
+            do {
+                console.log(r); // cetak nilai i
+                r++;// naikkan nilai i satu per satu
+            } while (r < 3);// ulangi selama i masih kurang dari 3
+
+            let result = 0;// inisialisasi nilai awal hasil
+            let s = 0;// inisialisasi penghitung
+            do {
+                s = s + 1;// tambahkan 1 ke i setiap iterasi
+                result = result + s;// tambahkan nilai i ke result
+            } while (s < 5);// ulangi selama i kurang dari 5
+            console.log(result);// cetak hasil akhir
+            // Penjelasan akhir
+            // Iterasi 1: i = 1, result = 0 + 1 = 1
+            // Iterasi 2: i = 2, result = 1 + 2 = 3
+            // Iterasi 3: i = 3, result = 3 + 3 = 6
+            // Iterasi 4: i = 4, result = 6 + 4 = 10
+            // Iterasi 5: i = 5, result = 10 + 5 = 15 → berhenti karena i < 5 sudah false
+
+            let w = 5
+            do{
+                console.log(w);
+                w++
+            } while (w < 5) {
+                
+            }
+
+
+        // Continue Statement
+        for (let i = 0; i < 10; i++) {
+            // Jika kondisi bernilai true, lewati sisa kode dalam blok dan lanjut ke iterasi berikutnya
+            // Perulangan dimulai dari i = 0 hingga i < 10. Artinya, i akan bernilai 0 hingga 9.
+            if (i % 2 == 0) continue;
+            // Mengecek apakah i habis dibagi 2 (bilangan genap). Jika ya, maka continue akan melewati console.log(i) dan langsung lanjut ke iterasi berikutnya.
+            console.log(i); // Menampilkan bilangan ganjil: 1, 3, 5, 7, 9
+        }
+
+        // For Of
+            const numbers = [100, 200, 300]; // Membuat array bernama 'numbers' yang berisi 3 elemen angka
+            // Menggunakan for...of untuk mengambil langsung setiap nilai di dalam array
+            for (const number of numbers) {
+                console.log(number); // Menampilkan nilai saat ini ke konsol: 100, lalu 200, lalu 300
+            }
+
+            const stringTesting = 'test character'; 
+            for (const character of stringTesting) {
+                console.log(character); 
+            }
+
+            // Penggunaan Pada Set
+            const list = new Set([1, 1, 2]); // Membuat objek Set berisi 1 dan 2 (duplikat 1 otomatis dihapus)
+            // Menggunakan for...of untuk mengiterasi setiap item unik di dalam Set
+            for (const item of list) {
+            console.log(item); // Menampilkan item ke konsol: 1 lalu 2
+            }
+
+            // Penggunaan pada Map
+            const keyValPairs = new Map([['a', 1], ['b', 2], ['c', 3]]);
+            // Membuat objek Map berisi pasangan key-value: a → 1, b → 2, c → 3
+            for (const pair of keyValPairs) {
+            console.log(pair); // Menampilkan setiap pasangan key dan value dalam bentuk array: ['a', 1], ['b', 2], ['c', 3]
+            }
+            // contoh lain Map dari dunia nyata
+            const hargaProduk = new Map([
+                ['apel', 5000],
+                ['jeruk', 7000],
+                ['mangga', 10000]
+            ]);
+            // Membuat Map bernama hargaProduk, yang berisi pasangan key (nama buah) dan value (harga)
+            for (const [buah, harga] of hargaProduk) {
+            // Melakukan iterasi pada setiap pasangan key-value di dalam Map
+            // Menggunakan destructuring untuk langsung mendapatkan 'buah' dan 'harga'        
+            console.log(`${buah} seharga Rp${harga}`);
+            // Menampilkan ke konsol dalam format string: "nama buah seharga Rp[harga]"
+}
+
+            // Penggunaan Destructuring assignment
+            const keyValPairs1 = new Map([['a', 1], ['b', 2], ['c', 3]]);
+            // Membuat Map dengan 3 pasangan key-value: 'a' → 1, 'b' → 2, 'c' → 3
+            for (const [key, value] of keyValPairs1) {
+            // Menggunakan destructuring array untuk langsung memisahkan key dan value dari setiap pasangan
+            console.log(`key = ${key}, value = ${value}`);
+            // Menampilkan key dan value dalam format string menggunakan template literal
+            }
+
+
+
+
+    </script>
+</body>
+</html>

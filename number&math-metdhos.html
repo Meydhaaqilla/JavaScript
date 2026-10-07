@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Number & Math Method</h2>
+
+    <script>
+    // NUMBER -> Presisi Bilangan Bulat
+        let a = 12300000
+        // dapat menulis 123e5
+        let b = 0.00123
+        // dapat ditulis 123e-5
+
+        let c = 999999999999999;
+        console.log(c);
+        // result ini masih aman, karene max 15 angka dlm js
+
+        let d = 9999999999999999;
+        console.log(d);
+        // resultnya akan menjadi 1000000000000000 karena 9 nya ada 16
+// =========================================================================
+    // Number Presisi Floating
+        // Aritmatika floating point tidak selalu 100% akurat
+        let e = 0.2 + 0.1;
+        console.log(e);
+        // unutk mengatasimasalah sebaiknya mengalikan dan membagi
+        let f = ((0.2 * 10) + (0.1 * 10)) / 10
+        console.log(f);
+// =========================================================================
+    // Kesalahan Umum Number
+        let g = 10;
+        let h = '20';
+        let i = g + h;
+        console.log(i);
+        // ini berlaku untuk + jika -, /, * masih bisa menggunakan 'string'
+        // namun tidak sesuai dengan peraturannya
+// ==========================================================================
+    // METODE TOSTRING()
+        let j = 987;
+        let textj = j.toString();
+        console.log(textj);
+        console.log(typeof textj);
+// ==========================================================================
+    // METODE BASE()
+        let angka = 255;
+        console.log(angka.toString(2)); // Bilangan Biner
+        console.log(angka.toString(8)); // Bilangan Oktal
+        console.log(angka.toString(16)); // Bilangan Hex
+// ==========================================================================
+    // METODE EXPONENTIAL()
+        let k = 9.675
+        console.log(k.toExponential());
+        console.log(k.toExponential(2)); // diambil 2 aknga dari brlakang
+        console.log(k.toExponential(4));
+// ===========================================================================
+    // METODE TOFIXED()
+        let m = 3.876
+        console.log(m.toFixed());
+        console.log(m.toFixed(2));
+        console.log(m.toFixed(4));
+        // numeber pembulatan
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.ROUND() -> mengembalikan bilangan bulat tedekat
+        let n = 9.876;
+        console.log(Math.round (n));
+        let o = 9.499;
+        console.log(Math.round (o));
+        let p = 9.368;
+        console.log(Math.round (p));
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.CEIL() -> mengembalikan nilai yg dibulatkan ke atas ke bilangan bulat terdekat
+        let q = 4.6;
+        console.log(Math.ceil (q));
+        let r = 4.2;
+        console.log(Math.ceil (r));
+        let s = -4.4;
+        console.log(Math.ceil (s));
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.FLOOR() -> mengembalikan nilai yg dibulatkan ke bawah ke bilangan bulat terdekat
+        let t = 8.6;
+        console.log(Math.floor (t));
+        let u = 8.2;
+        console.log(Math.floor (u));
+        let v = -8.4;
+        console.log(Math.floor (v));
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.TRUNC() -> mengembalikan bagian integer dari nilai, tidak peduli di belakangnya
+        let w = 9.6;
+        console.log(Math.trunc (w));
+        let x = 3.2;
+        console.log(Math.trunc (x));
+        let y = -2.4;
+        console.log(Math.trunc (y));
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.POW() & MATH.SQRT()
+        let z = 7;
+        let zz = 2;
+        let z3 = 85;
+        console.log(Math.pow (z, zz)); // atau
+        console.log(Math.pow (9, 2));
+        // Math.pow(x,y) -> mengembalikan nilai x ke pangkat y
+        console.log(Math.sqrt(z3));// atau
+        console.log(Math.sqrt(144));
+        // Math.sqrt(x)  -> mengembalikan akar kuadrat dari x
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.MIN() & MATH.MAX()
+        console.log(Math.min(-13, 0, 4, 7, 19));
+        console.log(Math.max(-13, 0, 4, 7, 19));
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.RANDOM() -> mengembalikan angka acak antara 0 (inklusif), dan 1 (eksklisif)
+        console.log(Math.random());
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // MATH.RANDOM() digunakan dengan MATH.FLOOR() dapat digunakan unk mengembalikan bilangan bulat acak
+        console.log(Math.floor(Math.random()*10));
+        // result: random number 0 - 9
+        console.log(Math.ceil(Math.random()*10));
+        // result: random number 1 - 10
+// Untuk Sin Cos Tan lihat di w3schools JS Math
+    </script>
+</body>
+</html>

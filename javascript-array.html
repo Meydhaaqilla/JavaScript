@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JavaScript</h1>
+    <script>
+        // Analogi Antrian (array di mulai dari urutan ke 0)
+        let fruits =['apple', 'banana', 'orange'];
+        console.log(fruits [0]);
+        console.log(fruits [2]);
+        
+        const myArray = ['L', 'E', 'A', 'R', 'N', '', 'T', 'O','' , 'C', 'O', 'D', 'E']
+        console.log(myArray [5]);
+        
+        // Operasi Array
+        let buah = ['nanas', 'anggur'];
+        buah[3] = 'pear';
+        console.log(buah); 
+        // Terdapat empty/ undefined karena nanas(0) anggur(1) dan pear (3)
+        
+        let activities = ['work', 'sleep', 'run', 'eat'];
+        // menghapus elemen terakhir, kalau elemen pertama menggunakan shift()
+        activities.pop(); 
+        console.log(activities);
+        // menghapus kebali elemen terakhir daan dimpan ke dalam variable
+        const removedElement = activities.pop();
+        // memperoleh elemen yang di hapus
+        console.log(removedElement);
+        console.log(activities);
+        // cek panjang array
+        console.log(activities.length);
+        
+    </script>
+</body>
+</html>

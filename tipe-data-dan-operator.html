@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JavaScript</h1>
+    
+
+    <script>
+        // TIPE DATA - NUMBER
+        let a = 5
+        console.log(a/0);
+        let b = 8
+        console.log(b/NaN);
+        let c = 10
+        let d = 27
+        console.log(c * d * a * b);
+        console.log(a + b);
+        let g = `${5 + 8}`
+        console.log(g);
+        let h = "${5 + 8}"
+        console.log(h);// kalau pakai '' / "" penjumlahan tidak akan terjadi
+
+        // BRIGHT - STRING
+        let e = 'jumat'
+        console.log(e);
+        let f = "jum'at" 
+        console.log(f); // pada tulisan Jum'at terdapat (') dan bertemu dengan ('') jum'at = ('jum'at) maka hasil error sehingga harus dibedakan 
+        
+        // BOOLEAN - NULL
+        let i = 7
+        let j = 19
+        console.log(i>j);
+        console.log(i<j);
+        console.log(i>=j);
+        let k = null
+        console.log(j=k);
+
+        let umur = 20;
+        let bolehMasuk = umur >= 18;
+        console.log("Boleh masuk?", bolehMasuk);
+
+        let sudahBayar = true;
+        if (sudahBayar) {
+        console.log("Silakan masuk.");
+        } else {
+        console.log("Silakan bayar dulu.");
+        }
+
+        // UNDEFINET
+        let l
+        console.log(l);
+        
+        // OBJECT
+        let m = {
+            name:'Meydiasya',
+            age: 25,
+            color: 'blue'
+        }
+        console.log(m);
+        
+        // ARRAY
+        let n = ['apel', 'jeruk', 'semangka']
+        console.log(n);
+        
+        // TYPE OF
+        let o = 'Meydiasya'
+        console.log(typeof o);
+        let p = 19
+        console.log(typeof p);
+        let q = true
+        console.log(typeof q);
+        
+
+        // =============================
+        // Operator Perbandingan di JavaScript
+        // =============================
+
+        // 1. ==  : Sama dengan (tidak memeriksa tipe data)
+        console.log(5 == '5'); // true → membandingkan nilai saja, tipe diabaikan
+
+        // 2. === : Sama dengan dan sama tipe (strict equality)
+        console.log(5 === '5'); // false → nilai sama tapi tipe berbeda (number vs string)
+        console.log(5 === 5);   // true → nilai dan tipe sama
+
+        // 3. !=  : Tidak sama dengan (tidak memeriksa tipe data)
+        console.log(5 != '5'); // false → nilai sama walau tipe beda
+
+        // 4. !== : Tidak sama atau tipe berbeda (strict inequality)
+        console.log(5 !== '5'); // true → tipe berbeda
+
+        // 5. >   : Lebih besar dari
+        console.log(10 > 7); // true → 10 lebih besar dari 7
+
+        // 6. <   : Lebih kecil dari
+        console.log(3 < 5); // true → 3 lebih kecil dari 5
+
+        // 7. >=  : Lebih besar atau sama dengan
+        console.log(5 >= 5); // true → sama dengan
+
+        // 8. <=  : Lebih kecil atau sama dengan
+        console.log(2 <= 4); // true → 2 lebih kecil dari 4
+        console.log(4 <= 4); // true → sama dengan
+
+        // =============================
+        // Penggunaan $ dalam JavaScript
+        // =============================
+
+        // 1. Template literals menggunakan ${} untuk menyisipkan nilai dalam string
+        let nama = "Rudi";
+        let umur1 = 30;
+        console.log(`Halo, nama saya ${nama} dan umur saya ${umur1}`); 
+        // Output: Halo, nama saya Rudi dan umur saya 30
+
+        // 2. $ pada nama variabel (sah digunakan)
+        let $nilai = 80;
+        let harga$barang = 10000;
+        console.log($nilai + harga$barang); // 10080
+
+        // 3. $ dalam jQuery (jika library ini digunakan)
+        /// Misal: $('#id').hide(); // Menyembunyikan elemen dengan id="id"
+
+        // 4. $ di Regex → berarti "akhir string"
+        let kalimat = "Saya belajar JavaScript";
+        console.log(/JavaScript$/.test(kalimat)); // true → kalimat diakhiri dengan "JavaScript"
+
+        // 5. RxJS / Observable (konvensi: nama variabel diakhiri $)
+        const userData$ = "observable data"; // bukan Observable asli, hanya contoh konvensi
+        console.log(userData$);
+
+        // 6. Svelte reactivity ($:)
+        /// $: total = harga * jumlah; // total otomatis update (di Svelte)
+
+        // 7. Tagged template literals
+        function ucapan(strings, ekspresi) {
+        return `${strings[0]}${ekspresi.toUpperCase()}!`;
+        }
+        console.log(ucapan`Halo ${'dunia'}`); // Output: Halo DUNIA!
+
+    </script>
+
+</body>
+</html>

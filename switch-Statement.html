@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <script>
+        // With Break
+        let a = 2;
+        switch (a) {
+            case 3:
+                console.log('too small');
+                break;
+            case 4:
+                console.log('exactly!');
+                break;
+            case 5:
+                console.log('too big');
+                break;
+            default:
+                console.log("i doon't know such values");
+                break;
+        }
+
+        let b = 5;
+        switch (b) {
+            case 3:
+                console.log('too small');
+                break;
+            case 4:
+                console.log('exactly!');
+                break;
+            case 5:
+                console.log('too big');
+                break;
+            default:
+                console.log("i doon't know such values");
+                break;
+        }
+
+        // Without Break
+        let c = 10;
+        switch (c) {
+            case 8:
+                console.log('awal');
+            case 9:
+                console.log('awal menengah');
+            case 10:
+                console.log('menengah'); // dari sini case 10 (menengah) sudah akan muncul sampai bawahnya
+            default:
+                console.log('tidak semuanya');
+        }
+
+        // More Complex
+        let today = new Date().getDay(); // Mendapatkan angka hari (0–6)
+        switch (today) {
+            case 0:
+                console.log('Ini adalah hari Minggu');
+                break;
+            case 1:
+                console.log('Ini adalah hari Senin');
+                break;
+            case 2:
+                console.log('Ini adalah hari Selasa');
+                break;
+            case 3:
+                console.log('Ini adalah hari Rabu');
+                break;
+            case 4:
+                console.log('Ini adalah hari Kamis');
+                break;
+            case 5:
+                console.log('Ini adalah hari Jumat');
+                break;
+            case 6:
+                console.log('Ini adalah hari Sabtu');
+                break;
+            default:
+                console.log('Hari tidak diketahui');
+        }
+
+        // Common Code Blocks
+        let day = new Date().getDay();
+        switch (day) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                console.log("Hari kerja");
+                break;
+            case 0:
+            case 6:
+                console.log("Akhir pekan");
+                break;
+            default:
+                console.log("Hari tidak dikenali");
+        }
+
+        // Strict Comparison
+        let e = 1;
+        switch (e) {
+            case '1':  // Ini tidak cocok, karena '1' adalah string, sedangkan e = 1 (number)
+                e = 1;
+                break;
+            case 1:
+                e = 'one';
+                break;
+            case 2:
+                e = 'two';
+            default:
+                console.log('tidak semuanya');
+        }
+        console.log(e);
+        
+    </script>
+</body>
+</html>

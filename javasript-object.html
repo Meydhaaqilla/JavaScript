@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JavaScript</h1>
+    
+
+    <script>
+        // Object Properti
+        const a = {
+            name : 'Meydiasya',
+            age : 25
+        }
+        console.log(a);
+
+        const b = {
+            color : 'blue',
+            hobby : 'reading'
+        }
+        console.log(b.color);
+
+        //Object menambah properti  
+        const c = {
+            firstname : 'Meydiasya',
+            lastname : 'Huda'
+        }
+        c.age = 25
+        c.isMarried = false
+        console.log(c); // hasil akan sesuai abjad
+        
+        // Object menghapus properti
+        const d = {
+            firstname : 'Meydiasya',
+            lastname : 'Huda'
+        }
+        delete d.lastname
+        console.log(d);
+
+        // Property Shorthand
+        function makeUser(name, age) {
+            return {
+                name : name, // kita bisa menulis name, dan age saja, karena para meternya sama
+                age : age
+            }
+        }
+        let user = makeUser('Meydiasya', 25)
+        console.log(user);
+        
+        // operator in
+        let userasya = { name : 'Meydiasya' , age : 25};
+        console.log('age' in userasya);
+        console.log('married' in userasya);
+
+        let apa = {
+            name : 'asya',
+            age : 25,
+            isMarried : false,
+        };
+        for (let key in apa){
+            console.log(key);
+        }
+
+        let apaaja = {
+            name : 'asya',
+            age : 25,
+            isMarried : false,
+        };
+        for (let key in apaaja){
+            console.log(apaaja[key]);
+        }
+    </script>
+
+</body>
+</html>
