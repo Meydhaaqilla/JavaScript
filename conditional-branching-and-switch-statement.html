@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <script>
+        // Conditionl Operator
+        let age = 20;
+        let identyCard;
+        if (age >=17) {
+            identyCard = true;
+        } else {
+            identyCard = false;
+        }
+
+        console.log(identyCard);// kalau let agenya kurang dari 17 maka akan bernilai false
+        // kode diatas dapat di singkat jika boolean (true,false)
+        let age1 = 10;
+        let identyCardAllowed = age1 >= 17;
+        console.log(identyCardAllowed);
+
+        // ==============================================================================================================
+        // If Statement
+        let score = 80;
+        if (score >= 75) {
+            console.log("Lulus!");
+        }
+
+        // ==============================================================================================================
+        // If Else Statement
+        let score1 = 60;
+        if (score1 >= 75) {
+            console.log("Lulus!");
+        } else {
+            console.log("Tidak lulus.");
+        }
+
+        let year = 2000   // Menyimpan nilai tahun 2000 ke dalam variabel 'year'
+        let a = year == 2018   // Mengecek apakah 'year' sama dengan 2018, hasilnya adalah nilai boolean (true/false)
+                               // Dalam hal ini, karena 2000 != 2018, maka nilai 'a' adalah false
+        if (year == 2025) {   // Mengecek apakah 'year' bernilai 2025
+            console.log('ya tahun ini 2025');
+        } else {
+            console.log('tahun ini bukan 2025');
+        }
+
+        console.log('bisa langsung kesini');   // Baris ini akan selalu dijalankan, apapun hasil dari if-else di atas
+        
+        // ===============================================================================================================
+        // If Else If Statment
+        let score2 = 85; // Menyimpan nilai skor ke dalam variabel 'score'
+        if (score2 >= 90) {
+            // Jika nilai skor lebih besar atau sama dengan 90
+            console.log("Nilai Anda A"); // Maka cetak "Nilai Anda A"
+        } else if (score2 >= 80) {
+            // Jika tidak, tapi skor lebih besar atau sama dengan 80
+            console.log("Nilai Anda B"); // Maka cetak "Nilai Anda B"
+        } else if (score2 >= 70) {
+            // Jika tidak juga, tapi skor lebih besar atau sama dengan 70
+            console.log("Nilai Anda C"); // Maka cetak "Nilai Anda C"
+        } else {
+            // Jika semua kondisi di atas tidak terpenuhi (skor di bawah 70)
+            console.log("Nilai Anda D atau di bawahnya"); // Maka cetak ini
+        }
+
+        // ===============================================================================================================
+        // Boolean Conversion
+        if (0) {
+            console.log('test');
+            // tidak akan terbaca karena bernilai 0 namun false terbaca
+        }
+        console.log('false');
+        
+        if (1) {
+            console.log('test');
+            // jika if bernilai lebih dari 1 maka test dan false akan terbaca
+        }
+        console.log('false');
+
+        let year3 = 2024
+        let z = year3 ==2022
+        if (z) {
+            console.log('test'); // maka tidak terbaca kecuali let year3 di ganti 2022
+        }
+
+        let year4 = 2025
+        let y = year4 ==2025
+        if (y) {
+            console.log('test');
+        }
+    </script>
+</body>
+</html>
