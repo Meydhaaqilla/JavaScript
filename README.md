@@ -1,2 +1,2 @@
 # JavaScript
-code JS
+Berisi tentang code javascript
